@@ -34,6 +34,22 @@ Criar uma interface funcional com foco em organização de dados, lógica de pro
 - `style.css` – Estilos visuais
 - `script.js` – Lógica de funcionalidades
 
+💡 Respostas às perguntas obrigatórias
+1. Qual foi sua lógica para estruturar o projeto?
+Organizei o HTML com seções para cabeçalho, colunas e modal de tarefas. No JavaScript, separei as funções por responsabilidade (criação de tarefas, edição, drag-and-drop, etc). O CSS foi estruturado com classes reutilizáveis para manter a consistência visual.
+
+2. Que parte você achou mais difícil ou travou?
+Achei mais difícil implementar o sistema de drag and drop, pois foi uma funcionalidade nova para mim. Tive dificuldades no início, mas depois percebi que era mais simples do que parecia.
+
+3. O que faria diferente se tivesse mais tempo?
+Implementaria as partes que acabaram ficando de fora e daria continuidade ao projeto para meu próprio aprendizado.
+
+4. O que faria diferente se fosse para um cliente real?
+Optaria por um design mais minimalista e limpo, evitando o excesso de cores.
+
+5. Você usou alguma ferramenta ou inteligência artificial para ajudar? Como?
+Sim, utilizei IA em pontos específicos onde a documentação não era suficiente, especialmente para esclarecer dúvidas e buscar o melhor método para resolver tarefas, como decidir entre o uso de arrays ou funções específicas.
+
 ## 🚀 Como executar
 
 1. Clone o repositório:
