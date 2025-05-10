@@ -156,7 +156,7 @@ function updateTask(){
 
     if (!validateForm()) return;
 
-    //criasse uma lista nova a partir dos novos valores do input
+    //criada uma lista nova a partir dos novos valores do input
     const upTask = {
         id: $idInput.value,
         title: $titleInput.value,
@@ -217,25 +217,25 @@ function dragstartHandler(ev) {
   function dropHandler(ev) {
     ev.preventDefault();
   
-    // 1) Pega o ID do card que foi arrastado
+    // Pega o ID do card que foi arrastado
     const cardId = ev.dataTransfer.getData("text/plain");
     const cardEl = document.getElementById(cardId);
   
-    // 2) Encontra a área .cards-column onde soltou
+    // Encontra a área .cards-column onde soltou
     const dropArea = ev.target.closest('.cards-column');
     if (!dropArea) return;
   
-    // 3) Move o elemento no DOM (você vê o efeito imediatamente)
+    //  Move o elemento no DOM (você vê o efeito imediatamente)
     dropArea.appendChild(cardEl);
   
-    // 4) Descobre o novo status da coluna
+    //  Descobre o novo status da coluna
     const newStatus = dropArea.closest('.column').dataset.status;
     console.log(`Card ${cardId} movido para status ${newStatus}`);
   
-    // 5) Atualiza o seu array de dados
+    //  Atualiza o seu array de dados
     columnPosition(cardId, newStatus);
   
-    // 6) Remove o highlight (às vezes o dragLeave não dispara)
+    //  Remove o highlight (às vezes o dragLeave não dispara)
     dropArea.classList.remove('column--highlight');
   }
   
