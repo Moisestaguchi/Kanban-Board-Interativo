@@ -1,0 +1,215 @@
+*,*::before,*::after{
+    margin: 0%;
+    padding: 0%;
+    border: 0%;
+    box-sizing: border-box;
+}
+:root
+{
+    --color-bikenete: #437937;
+    --color-body:#DDD;
+    --color-font:#000000fb;
+    --color-header:#FFF;
+}
+body{
+    background-color: var(--color-body);
+}
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-header);
+    padding: 1em 2em;
+}
+#NewTaskBtn, #taskForm button{
+    border: none;
+    border-radius: 0.7rem;
+    color: #FFF;
+    font-size: 20px;
+    background-color: mediumpurple;
+    padding: 0.5em;
+    cursor: pointer;
+}
+main, .columns{
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+}
+.columns{
+    gap: 5vh;
+}
+.column{
+    display: flex; flex-direction: column;
+    width: 20vw; height: 73vh;
+    padding: 0.4em;
+    background-color: #FFF;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+.cards-column{
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.column--highlight{
+    background-color: #deebff;
+    border: 2px solid #928cf7;
+    border-radius: 0.8rem;
+}
+.head-column{
+    width: 100%;
+    border-radius: 0.2rem;
+    border-bottom: 0.25em solid #dddddd;
+    margin: 1rem 0;
+    display: grid
+;
+    justify-content: center;
+}
+.column::after{
+    position: absolute;
+    content: '';
+    height: 1.5vh; width: 100%;
+    top:0; left: 0;
+}
+
+.column.aberto::after { background-color: #d573b6; }
+.column.em-andamento::after { background-color: #f1c40f; }
+.column.concluido::after { background-color: #92a5fb; }
+.column.done::after { background-color: #6ed0bc; }
+
+/* modal | Form */
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex; align-items: center; justify-content: center;
+  }
+  /* escondido por padrão */
+ .hidden { display: none; }
+  /* caixa interna */
+  .modal-content {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    width: 25rem;
+    
+  }
+  .head-modal{
+    display: flex;align-items: center;justify-content: space-between;flex-direction: row-reverse;
+    padding: 0.3rem;
+    border-bottom: 1px solid #DDD;
+    width: 100%;
+  }
+  .head-modal {
+    display: flex;align-items: center;justify-content: space-between;flex-direction: row-reverse;
+    padding: 0.3rem;
+    border-bottom: 1px solid #DDD;
+    width: 100%;
+  }
+  /* botão de fechar */
+  .close {
+    cursor: pointer;
+    font-size: 2.2rem;
+  }
+  #taskForm{
+    display: flex; flex-direction: column;
+    padding: 1rem 2rem;
+    gap: 0.5rem;
+}
+  .task-styl {
+    display: flex;flex-direction: column;
+    border: none;
+    border-radius: 1rem;
+  }
+  .task-styl textarea,  .task-styl input, .task-styl select{
+    width: 100%;
+    border-radius: 1rem;
+    padding: 0.8rem;
+    font-size: 0.7rem;
+    border: 2px solid #DDD;
+    color:#333;
+  }
+  .task-styl label{
+    font-size: 1.1rem;
+    color: #5e5151;
+  }
+  
+  .badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    margin-left: 0.5rem;
+  }
+  
+  /* Cores por prioridade */
+  .priority-alta {
+    background-color: #e74c3c; /* vermelho forte */
+  }
+  .priority-média {
+    background-color: #f1c40f; /* amarelo */
+  }
+  .priority-baixa {
+    background-color: #2ecc71; /* verde */
+  }
+  /* edição Card */
+  .card{
+    padding: 0.5em;
+    background: #DDD;
+    border-radius: 0.5rem;
+    margin-bottom: 2vh;
+    display: grid;
+    gap: 0.8vh;
+    padding: 1rem 0.5rem;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  .btnsForm{
+    display: flex; justify-content: space-between;flex-direction: row-reverse;
+    padding: 0.2rem;
+  }
+    .btn
+    {
+      border: none;
+      padding: 0.5rem 0.8rem;
+      color: #DDD;
+      border-radius: 0.3rem;
+      align-items: center;
+      font-size: 17px;
+    }
+      .editar {
+        background-color: #9370db;
+      }
+      .excluir {
+        background-color: red;
+      }
+/* editando barra de scroll */
+*::-webkit-scrollbar{
+  width: 7px;
+  background-color: rgb(0, 0, 0);
+  
+}
+*::-webkit-scrollbar-track{
+  width: 5px;
+  background-color: #345d9c;;
+}
+/*mensagem para erro*/
+.error {
+  color: red;
+  font-size: 0.8rem;
+  height: 1em; /* reserva o espaço */
+  display: block;
+  margin-top: 0.2em;
+}
+.error:empty {
+  display: none;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> KANBAN </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Kanban board</h1>
+        <button  onclick="openModal()" id="NewTaskBtn">Nova Tarefa</button>
+    </header>
+    <main>
+        <section class="columns ">
+          <!-- Coluna: Aberto -->
+          <div class="column aberto" data-status="1" >
+            <div class="head-column">
+              <h2>Aberto</h2>
+            </div>
+            
+            <div class="cards-column" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)" ondragenter="dragEnter(event)"ondragleave="dragLeave(event)">
+              
+            </div>
+          </div>
+    
+          <!-- Coluna: Em Progresso -->
+          <div class="column em-andamento" data-status="2">
+            <div class="head-column">
+              <h2>Em Progresso</h2>
+            </div>
+            
+            <div class="cards-column"  ondrop="dropHandler(event)" ondragover="dragoverHandler(event)" ondragenter="dragEnter(event)"ondragleave="dragLeave(event)">
+            </div>
+          </div>
+    
+          <!-- Coluna: Concluído -->
+          <div class="column concluido"  data-status="3" >
+            <div class="head-column">
+              <h2>Concluído</h2>
+            </div>
+            
+            <div class="cards-column" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)" ondragenter="dragEnter(event)"ondragleave="dragLeave(event)">
+            </div>
+          </div>
+
+          <!-- Coluna: Done Done -->
+          <div class="column done" data-status="4" >
+            <div class="head-column">
+              <h2>Done</h2>
+            </div>
+            <div class="cards-column" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"  ondragenter="dragEnter(event)"ondragleave="dragLeave(event)"></div>
+          </div>
+        </section>
+
+        
+      </main>
+      <!-- form/modal -->
+      <div id="taskModal" class="modal hidden">
+        <div class="modal-content">
+          <input type="hidden" id="idInput">
+
+          <div class="head-modal">
+            <span id="closeModal" class="close" onclick="closeModal()" >&times;</span>
+            <span id="creationModelTitle">Nova Tarefa</span>
+            <span id="editModelTitle" style="display:none">Editar Tarefa</span>
+          </div>
+          
+          <div id="taskForm">
+            <div class="task-styl">
+              <label>
+                Título:
+                <input type="text" id="taskTitle" required />
+              </label>
+              <span class="error" id="error-title"></span>
+            </div>
+
+            <div class="task-styl">
+              <label>
+              Descrição:
+              <textarea id="taskDesc"></textarea>
+            </label>
+            <span class="error" id="error-desc"></span>
+            </div>
+
+            <div class="task-styl">
+              <label for="priority">Prioridade</label>
+              <select name="priority" id="priority">
+              <option value="Baixa">Baixa</option>
+              <option value="Média">Média</option>
+              <option value="Alta">Alta</option>
+              </select>
+              <span class="error" id="error-priority"></span>
+            </div>
+
+            <div class="task-styl">
+              <label for="column">Coluna</label>
+              <select  id="column">
+              <option value="1">Aberto</option>
+              <option value="2">Em progresso</option>
+              <option value="3">Concluído</option>
+              <option value="4">Done</option>
+              </select>
+              <span class="error" id="error-column"></span> 
+            </div>
+
+            <div class="task-styl">
+              <label>
+              Data de entrega:
+                <input type="date" id="taskDate"/>
+              </label>
+            </div>
+            <button class="btnForm"id="creationModelBtn" onclick="createTask()">Criar</button>
+            <button class="btnForm"id="editModelBtn"     onclick="updateTask()" style="display:none">Salvar</button>
+          </div>
+        </div>
+      </div>
+      <script src="script.js"></script>
+</body>
+
+</html>
