@@ -6,9 +6,8 @@
 }
 :root
 {
-    --color-bikenete: #437937;
+    
     --color-body:#DDD;
-    --color-font:#000000fb;
     --color-header:#FFF;
 }
 body{
@@ -89,7 +88,7 @@ main, .columns{
   }
   /* escondido por padrão */
  .hidden { display: none; }
-  /* caixa interna */
+
   .modal-content {
     background: #fff;
     padding: 1.5rem;
@@ -147,7 +146,7 @@ main, .columns{
     margin-left: 0.5rem;
   }
   
-  /* Cores por prioridade */
+  
   .priority-alta {
     background-color: #e74c3c; /* vermelho forte */
   }
@@ -206,7 +205,7 @@ main, .columns{
 .error {
   color: red;
   font-size: 0.8rem;
-  height: 1em; /* reserva o espaço */
+  height: 1em; 
   display: block;
   margin-top: 0.2em;
 }
